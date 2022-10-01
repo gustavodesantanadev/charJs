@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Implementando o ChartJs</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div>
+        <canvas class="grafico" id="myChart"></canvas>
+    </div>      
+
+    <div>
+        <canvas class="grafico" id="myChart2"></canvas>
+    </div>    
+
+    <div>
+        <canvas class="grafico" id="myChart3"></canvas>
+    </div>   
+</body>
+
+<script>
+    const labels = [
+      'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgb(112, 131, 224)',
+        borderColor: 'rgb(112, 131, 224)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+
+    const data2 = {
+      labels: labels,
+      datasets: [{
+        label: 'My First dataset2',
+        backgroundColor: 'rgb(3, 252, 190)',
+        borderColor: 'rgb(3, 252, 190)',
+        data: [0, 10, 5, 2, 20, 30, 45],
+      }]
+    };
+
+    const data3 = {
+        labels: [
+            'Pink',
+            'Blue',
+            'Yellow'
+        ],
+        datasets: [{
+            label: 'My First Dataset3',
+            data: [300, 50, 100],
+            backgroundColor: [
+            'rgb(235, 138, 223)',
+            'rgb(119, 221, 237)',
+            'rgb(231, 242, 126)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+
+    const config2 = {
+      type: 'bar',
+      data: data2,
+      options: {}
+    };
+
+    const config3 = {
+      type: 'doughnut',
+      data: data3,
+      options: {}
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+    );
+
+    const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+    );
+
+    const myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config3
+    );
+</script>
+  
+</html>
+
+
+
+
+  
